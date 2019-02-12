@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+   - name: install apache
+     yum: name=httpds
+
+   - name: start apache
+     systemd: name=httpd state=restarted
